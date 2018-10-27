@@ -44,6 +44,5 @@ EducationrantDetailtView.prototype.clearRant = function () {
   this.container.innerHTML = '';
 };
 
-// find method with filter
-// pushlish subscribe subscribe deatil view
+
 module.exports = Educationrant;
