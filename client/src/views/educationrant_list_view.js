@@ -9,7 +9,7 @@
 
 EducationrantListView.prototype.bindEvents = function () {
   PubSub.subscribe('Educationrant:data-loaded', (event) => {
-      this.populateDropDown(event.detail)
+      this.populateDropDown(event.detail.title)
 
   })
 this.dropDownSelect.addEventListener('change', (event)=>{
@@ -35,6 +35,5 @@ EducationrantListView.prototype.populateDropDown = function (titleList) {
   })
 
 };
-
 
 module.exports = EducationrantListView;

@@ -13,11 +13,6 @@ Educationrant.prototype.bindEvents = function () {
     const selectedRant = this.request[selectedIndex];
     PubSub.publish('Educationrant:rant_detail_ready',selectedRant);
   })
-  PubSub.subscribe('EducationrantListView:change', (event) => {
-    this.clearRant();
-    this.renderRantDetails(event.detail);
-  });
-};
 
 };
 
@@ -38,11 +33,5 @@ const titleList = educationrant.data.children.map(rant => rant.data.title)
 debugger;
 return titleList
 };
-
-
-EducationrantDetailtView.prototype.clearRant = function () {
-  this.container.innerHTML = '';
-};
-
 
 module.exports = Educationrant;
