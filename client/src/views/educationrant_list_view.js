@@ -1,39 +1,30 @@
-  const PubSub = require('../helpers/pub_sub.js');
-  const EducationrantDetailtView = require('./educationrant_detail_view.js');
+const PubSub = require('../helpers/pub_sub.js');
+const EducationrantListView = require('./educationrant_list_view.js')
 
+const EducationrantDetailtView = function (container){
+this.container = container;
+};
 
-  const EducationrantListView = function (dropDownSelect) {
-  this.dropDownSelect = dropDownSelect;
+EducationrantDetailtView.prototype.bindEvents = function () {
+  PubSub.subscribe('EducationrantView:change', (event) => {
+    this.clearRant();
+    this.renderRantDetails(event.detail);
+  });
+};
+
+EducationrantDetailtView.prototype.clearRant = function () {
+  this.container.innerHTML = '';
 };
 
 
-EducationrantListView.prototype.bindEvents = function () {
-  PubSub.subscribe('Educationrant:data-loaded', (event) => {
-      this.populateDropDown(event.detail.title)
+EducationrantDetailtView.prototype.renderRantDetails = function (rantTitle) {
+  const title = this.createTextElement('h2', rantTitle.title);
+  this.container.appendChild(title);
 
-  })
-this.dropDownSelect.addEventListener('change', (event)=>{
-  const selectedIndex = event.target.value;
-  PubSub.publish('EducationrantListView:change', selectedIndex)
-})
 
 };
 
-EducationrantListView.prototype.createDropDownItem = function (title, index) {
-  console.log(title);
-  const option = document.createElement('option')
-  option.textContent = title;
-  option.value = index;
-  return option;
-};
 
-EducationrantListView.prototype.populateDropDown = function (titleList) {
-  titleList.forEach((title, index) => {
-    const titleOption = this.createDropDownItem(title, index);
-    const dropDownSelect = document.querySelector('#educationrant-select')
-    dropDownSelect.appendChild(titleOption)
-  })
 
-};
 
-module.exports = EducationrantListView;
+module.export = EducationrantDetailtView;

@@ -7,11 +7,11 @@ const Educationrant = function (url) {
 };
 
 Educationrant.prototype.bindEvents = function () {
-  PubSub.subscribe('EducationrantListView:change', (event) =>{
+  PubSub.subscribe('EducationrantView:change', (event) =>{
     selectedIndex = event.detail;
     // debugger;
     const selectedRant = this.request[selectedIndex];
-    PubSub.publish('Educationrant:rant_detail_ready',selectedRant);
+    PubSub.publish('Educationrant:rant_ready',selectedRant);
   })
 
 };
@@ -30,8 +30,10 @@ Educationrant.prototype.getData = function () {
 
 Educationrant.prototype.publishTitle = function (educationrant) {
 const titleList = educationrant.data.children.map(rant => rant.data.title)
-debugger;
+// debugger;
 return titleList
 };
+
+
 
 module.exports = Educationrant;
