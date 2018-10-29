@@ -10,13 +10,12 @@ this.dropDownSelect = dropDownSelect;
 EducationrantListView.prototype.bindEvents = function () {
 PubSub.subscribe('Educationrant:data-loaded', (event) => {
   // console.log(event.detail.title);
-    this.populateDropDown(event.detail.title)
+    this.populateDropDown(event.detail)
 
 
 })
 this.dropDownSelect.addEventListener('change', (event)=>{
 const selectedIndex = event.target.value;
-debugger;
 PubSub.publish('EducationrantView:change', selectedIndex)
 })
 
@@ -29,6 +28,7 @@ option.textContent = title;
 option.value = index;
 return option;
 };
+
 
 EducationrantListView.prototype.populateDropDown = function (titleList) {
 titleList.forEach((title, index) => {

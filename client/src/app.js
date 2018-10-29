@@ -1,6 +1,5 @@
 const Educationrant = require('./models/educationrant.js')
 const EducationrantView = require('./views/educationrant_view.js');
-const EducationrantListView = require('./views/educationrant_list_view.js');
 const EducationrantDetailtView = require('./views/educationrant_detail_view.js')
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,9 +10,9 @@ const educationrantView = new EducationrantView(dropDownSelect);
 educationrantView.bindEvents();
 
 
-const listContainer = document.querySelector('#educationrant');
-const educationrantListView = new EducationrantListView(listContainer);
-educationrantListView.bindEvents();
+const div = document.querySelector('#educationrant');
+const educationrantDetailView = new EducationrantDetailView(div);
+educationrantDetailView.bindEvents();
 
 const educationrant = new Educationrant();
 educationrant.getData();
