@@ -44,7 +44,10 @@ Educationrant.prototype.getRant = function (rants) {
 
   const rant = {
     author: rants.data["author"],
-    selftext: rants.data["selftext"]
+    selftext: rants.data["selftext"],
+    url: rants.data["url"],
+    image: rants.data.preview.images['source']
+
 
   }
 //Publish rant

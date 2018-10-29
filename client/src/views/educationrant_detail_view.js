@@ -23,24 +23,40 @@ rantDetail.classList.add('educationrant');
 
 const title = document.createElement('h3');
 debugger;
-rant.text = rant.title;
+rant.textContent = rant.title;
 rantDetail.appendChild(title)
 this.container.appendChild(rantDetail)
 
+const rantDetailList = document.createElement('ul');
+// debugger;
+const selftext = this.createRantDetailItem('Selftext', rant.selftext);
+rantDetailList.appendChild(selftext);
+this.container.appendChild(rantDetailList)
 
+const author = this.createRantDetailItem('Author', rant.author);
+// debugger;
+rantDetailList.appendChild(author);
+
+const urlLink = this.createRantDetailItem('URL', rant.url);
+rantDetailList.appendChild(urlLink);
+
+const imagePreview = document.createElement('img');
+imagePreview.src = rant.preview.image;
+
+this.container.appendChild(rantDetailList);
+return rantDetail;
 
 };
 
+EducationrantDetailView.prototype.createRantDetailItem = function (label, property) {
+const element = document.createElement('li');
+element.textContent = `${label}: ${property}`;
+return element;
 
-
+};
 
 EducationrantDetailView.prototype.clearRant = function () {
   this.container.innerHTML = '';
-};
-
-
-
-
-
+}
 
 module.exports = EducationrantDetailView;
