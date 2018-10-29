@@ -1,6 +1,6 @@
 const Educationrant = require('./models/educationrant.js')
 const EducationrantView = require('./views/educationrant_view.js');
-const EducationrantDetailtView = require('./views/educationrant_detail_view.js')
+const EducationrantDetailView = require('./views/educationrant_detail_view.js')
 
 document.addEventListener('DOMContentLoaded', () => {
 // console.log("hi");

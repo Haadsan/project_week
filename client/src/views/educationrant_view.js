@@ -1,13 +1,12 @@
 const PubSub = require('../helpers/pub_sub.js');
-const EducationrantDetailtView = require('./educationrant_detail_view.js');
 
 
-const EducationrantListView = function (dropDownSelect) {
+const EducationrantView = function (dropDownSelect) {
 this.dropDownSelect = dropDownSelect;
 };
 
 
-EducationrantListView.prototype.bindEvents = function () {
+EducationrantView.prototype.bindEvents = function () {
 PubSub.subscribe('Educationrant:data-loaded', (event) => {
   // console.log(event.detail.title);
     this.populateDropDown(event.detail)
@@ -21,7 +20,7 @@ PubSub.publish('EducationrantView:change', selectedIndex)
 
 };
 
-EducationrantListView.prototype.createDropDownItem = function (title, index) {
+EducationrantView.prototype.createDropDownItem = function (title, index) {
 // console.log(title);
 const option = document.createElement('option')
 option.textContent = title;
@@ -30,7 +29,7 @@ return option;
 };
 
 
-EducationrantListView.prototype.populateDropDown = function (titleList) {
+EducationrantView.prototype.populateDropDown = function (titleList) {
 titleList.forEach((title, index) => {
     // debugger;
   const titleOption = this.createDropDownItem(title, index);
@@ -43,4 +42,4 @@ titleList.forEach((title, index) => {
 
 
 
-module.exports = EducationrantListView;
+module.exports = EducationrantView;
