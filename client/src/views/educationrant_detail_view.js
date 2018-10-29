@@ -40,8 +40,12 @@ rantDetailList.appendChild(author);
 const urlLink = this.createRantDetailItem('URL', rant.url);
 rantDetailList.appendChild(urlLink);
 
+const thumbnailLink = this.createRantDetailItem('Thumbnail', rant.thumbnail);
+rantDetailList.appendChild(thumbnailLink);
+
 const imagePreview = document.createElement('img');
-imagePreview.src = rant.preview.image;
+imagePreview.src = rant.image
+this.container.appendChild(imagePreview);
 
 this.container.appendChild(rantDetailList);
 return rantDetail;

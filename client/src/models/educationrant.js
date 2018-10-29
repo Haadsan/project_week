@@ -46,7 +46,8 @@ Educationrant.prototype.getRant = function (rants) {
     author: rants.data["author"],
     selftext: rants.data["selftext"],
     url: rants.data["url"],
-    image: rants.data.preview.images['source']
+    thumbnail: rants.data["thumbnail"]
+    image: rants.data.preview.images[0].source.url
 
 
   }
