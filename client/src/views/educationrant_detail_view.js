@@ -41,15 +41,13 @@ const author = this.createRantDetailItem('Author', rant.author);
 // debugger;
 rantDetailList.appendChild(author);
 
-const urlLink = this.createRantDetailItem('URL', rant.url);
+const urlLink = this.createUrlLink('URL', rant.url);
 rantDetailList.appendChild(urlLink);
 
-const thumbnailLink = this.createRantDetailItem('Thumbnail', rant.thumbnail);
+if(rant.thumbnail != "self"){
+const thumbnailLink = this.createRantThumbnail('Thumbnail', rant.thumbnail);
 rantDetailList.appendChild(thumbnailLink);
-
-// const imagePreview = document.createElement('img');
-// imagePreview.src = rant.image
-// this.container.appendChild(imagePreview);
+}
 
 this.container.appendChild(rantDetailList);
 return rantDetail;
@@ -63,6 +61,25 @@ return element;
 
 };
 
+EducationrantDetailView.prototype.createRantThumbnail = function (label, property) {
+
+  const element = document.createElement('li');
+  thumbnail = document.createElement('img');
+  thumbnail.src = property;
+  element.appendChild(thumbnail);
+  return element;
+
+};
+
+EducationrantDetailView.prototype.createUrlLink = function (label, property) {
+  const element = document.createElement('li');
+  url = document.createElement('a');
+  url.href = property;
+  url.textContent = property;
+  element.appendChild(url)
+  return element;
+
+};
 EducationrantDetailView.prototype.clearRant = function () {
   this.container.innerHTML = '';
 }
