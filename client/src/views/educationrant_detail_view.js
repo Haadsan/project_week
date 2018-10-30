@@ -29,9 +29,13 @@ this.container.appendChild(rantDetail)
 
 const rantDetailList = document.createElement('ul');
 // debugger;
+if(rant.selftext != ""){
+
+
 const selftext = this.createRantDetailItem('Selftext', rant.selftext);
 rantDetailList.appendChild(selftext);
 this.container.appendChild(rantDetailList)
+}
 
 const author = this.createRantDetailItem('Author', rant.author);
 // debugger;
@@ -43,9 +47,9 @@ rantDetailList.appendChild(urlLink);
 const thumbnailLink = this.createRantDetailItem('Thumbnail', rant.thumbnail);
 rantDetailList.appendChild(thumbnailLink);
 
-const imagePreview = document.createElement('img');
-imagePreview.src = rant.image
-this.container.appendChild(imagePreview);
+// const imagePreview = document.createElement('img');
+// imagePreview.src = rant.image
+// this.container.appendChild(imagePreview);
 
 this.container.appendChild(rantDetailList);
 return rantDetail;

@@ -46,11 +46,14 @@ Educationrant.prototype.getRant = function (rants) {
     author: rants.data["author"],
     selftext: rants.data["selftext"],
     url: rants.data["url"],
-    thumbnail: rants.data["thumbnail"]
-    image: rants.data.preview.images[0].source.url
+    thumbnail: rants.data["thumbnail"],
+    // image: rants.data.preview.images[0].source.url
 
 
-  }
+
+};
+
+
 //Publish rant
 PubSub.publish('EducationRant:individual-rant', rant)
   console.log(rant);
