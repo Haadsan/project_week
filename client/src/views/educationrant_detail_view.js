@@ -32,7 +32,7 @@ const rantDetailList = document.createElement('ul');
 if(rant.selftext != ""){
 
 
-const selftext = this.createRantDetailItem('Selftext', rant.selftext);
+const selftext = this.createRantDetailItem('Text', rant.selftext);
 rantDetailList.appendChild(selftext);
 this.container.appendChild(rantDetailList)
 }

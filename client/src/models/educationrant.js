@@ -16,6 +16,7 @@ Educationrant.prototype.bindEvents = function () {
     // debugger;
     PubSub.publish('Educationrant:rant_ready',selectedRant);
 
+
   })
 
 };
@@ -53,8 +54,7 @@ Educationrant.prototype.getRant = function (rants) {
 
 };
 
-
-//Publish rant
+// Publish rant
 PubSub.publish('EducationRant:individual-rant', rant)
   console.log(rant);
 
