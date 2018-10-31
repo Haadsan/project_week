@@ -3,6 +3,7 @@ background-color: #F4E8C1;
 margin: 0
 font-family: cursive;
 color:green;
+text-align:center
 }
 
 
@@ -13,4 +14,8 @@ h1, h2 {
 
 #educationrant {
   margin-top: 90px;
+}
+
+#educationrant-select {
+  width: 60%;
 }
