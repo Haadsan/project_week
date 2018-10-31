@@ -1,4 +1,16 @@
 body{
 background-color: #F4E8C1;
+margin: 0
+font-family: cursive;
+color:green;
+}
 
+
+h1, h2 {
+  font-family:sans-serif;
+
+}
+
+#educationrant {
+  margin-top: 90px;
 }

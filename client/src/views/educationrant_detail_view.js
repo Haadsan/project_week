@@ -22,7 +22,7 @@ rantDetail.classList.add('educationrant');
 
 
 const title = document.createElement('h3');
-debugger;
+// debugger;
 rant.textContent = rant.title;
 rantDetail.appendChild(title)
 this.container.appendChild(rantDetail)
@@ -44,7 +44,7 @@ rantDetailList.appendChild(author);
 const urlLink = this.createUrlLink('URL', rant.url);
 rantDetailList.appendChild(urlLink);
 
-if(rant.thumbnail != "self"){
+if(rant.thumbnail != "self" && rant.thumbnail != "default"){
 const thumbnailLink = this.createRantThumbnail('Thumbnail', rant.thumbnail);
 rantDetailList.appendChild(thumbnailLink);
 }

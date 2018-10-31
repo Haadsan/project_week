@@ -23,7 +23,7 @@ Educationrant.prototype.bindEvents = function () {
 Educationrant.prototype.getData = function () {
   this.request.get()
   .then((response) => {
-    // debugger;
+    debugger;
     this.stories = response.data.children;
     // debugger;
     const rantTitle = this.publishTitle(response);
